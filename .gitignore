@@ -1,0 +1,22 @@
+# Dependencies for both workspaces
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment files
+.env
+.env.local
+client/.env
+server/.env
+
+# Build outputs & generated local database files
+dist/
+build/
+.next/
+*.db
+*.sqlite
+notes.json
+
+# System & IDE files
+.DS_Store
+.vscode/
