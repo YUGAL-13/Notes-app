@@ -1,7 +1,8 @@
 
-import { Feather, Square,
+import {
+  Feather, Square,
   //  Plus
-   } from "lucide-react";
+} from "lucide-react";
 import { menuItems, Taggers } from "./type";
 import type { NoteCounts } from "./MainContent";
 
@@ -39,7 +40,7 @@ export default function SideBar({
     );
     return matchedKey !== undefined ? tagCounts[matchedKey] : 0;
   };
-  
+
 
   return (
     <aside className="flex flex-col h-full w-full bg-slate-900 text-slate-300 p-4">
@@ -67,11 +68,10 @@ export default function SideBar({
             <button
               key={index}
               onClick={() => onSelectCategory(item.label)}
-              className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors w-full group cursor-pointer ${
-                isActive
-                  ? "bg-slate-800 text-white font-semibold"
-                  : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
-              }`}
+              className={`flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors w-full group cursor-pointer ${isActive
+                ? "bg-slate-800 text-white font-semibold"
+                : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
+                }`}
             >
               <div className="flex items-center gap-3">
                 <Icon
@@ -86,11 +86,10 @@ export default function SideBar({
               </div>
 
               <span
-                className={`text-xs font-semibold px-2 py-0.5 rounded-md min-w-5 text-center transition-colors ${
-                  isActive
-                    ? "bg-indigo-600 text-white"
-                    : "text-slate-400 bg-slate-800 group-hover:bg-slate-700"
-                }`}
+                className={`text-xs font-semibold px-2 py-0.5 rounded-md min-w-5 text-center transition-colors ${isActive
+                  ? "bg-indigo-600 text-white"
+                  : "text-slate-400 bg-slate-800 group-hover:bg-slate-700"
+                  }`}
               >
                 {liveCount}
               </span>
@@ -119,11 +118,10 @@ export default function SideBar({
               <button
                 key={index}
                 onClick={() => onSelectCategory(item.title)}
-                className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors w-full group cursor-pointer ${
-                  isActive
-                    ? "bg-slate-800 text-white font-semibold"
-                    : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
-                }`}
+                className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors w-full group cursor-pointer ${isActive
+                  ? "bg-slate-800 text-white font-semibold"
+                  : "text-slate-300 hover:bg-slate-800/60 hover:text-white"
+                  }`}
               >
                 <div className="flex items-center gap-3">
                   <span
@@ -133,11 +131,10 @@ export default function SideBar({
                 </div>
 
                 <span
-                  className={`text-xs font-semibold px-2 py-0.5 rounded-md min-w-5 text-center transition-colors ${
-                    isActive
-                      ? "bg-indigo-600 text-white"
-                      : "text-slate-400 bg-slate-800 group-hover:bg-slate-700"
-                  }`}
+                  className={`text-xs font-semibold px-2 py-0.5 rounded-md min-w-5 text-center transition-colors ${isActive
+                    ? "bg-indigo-600 text-white"
+                    : "text-slate-400 bg-slate-800 group-hover:bg-slate-700"
+                    }`}
                 >
                   {liveTagCount}
                 </span>

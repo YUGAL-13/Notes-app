@@ -9,15 +9,15 @@ export default function MainDash() {
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // 1. Mobile sidebar state
   const [tagCounts, setTagCounts] = useState<Record<string, number>>({});
-  
-  
+
+
   const [counts, setCounts] = useState<NoteCounts>({
     all: 0,
     pinned: 0,
     archive: 0,
     trash: 0,
   });
-  
+
 
   return (
     <div className="flex h-screen w-full overflow-hidden bg-slate-50">
@@ -31,9 +31,8 @@ export default function MainDash() {
 
       {/* 3. Responsive Sidebar (Slide-out drawer on mobile, static on desktop) */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <SideBar
           activeCategory={activeCategory}
@@ -43,7 +42,7 @@ export default function MainDash() {
           }}
           counts={counts}
           tagCounts={tagCounts}
-          
+
         />
       </aside>
 

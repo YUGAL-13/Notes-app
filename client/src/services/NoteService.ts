@@ -121,7 +121,7 @@ import type { NoteItem } from "../component/type";
 
 // Fallback to localhost if environment variable is not defined
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL ;
+  import.meta.env.VITE_API_URL;
 
 /**
  * Generic helper to handle response status and JSON parsing
@@ -172,7 +172,7 @@ export const noteService = {
    */
   update: async (
     id: string | number,
-    updatedFields: Partial<NoteItem>
+    updatedFields?: Partial<NoteItem>
   ): Promise<NoteItem> => {
     const res = await fetch(`${API_BASE_URL}/${id}`, {
       method: "PUT",
@@ -208,7 +208,7 @@ export const noteService = {
     const res = await fetch(`${API_BASE_URL}/${id}/trash`, {
       method: "PATCH",
     });
-    return res.json();
+    return handleResponse<NoteItem>(res);
   },
 
   // Restore from trash
@@ -216,6 +216,6 @@ export const noteService = {
     const res = await fetch(`${API_BASE_URL}/${id}/restore`, {
       method: "PATCH",
     });
-    return res.json();
+    return handleResponse<NoteItem>(res);
   },
 };

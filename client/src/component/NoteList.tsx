@@ -41,8 +41,8 @@ export default function NoteList({
               key={item.id || item.title || index}
               onClick={() => onSelectNote?.(item)}
               className={`w-full p-3 rounded-lg border transition-all cursor-pointer flex justify-between items-start group ${isActive
-                  ? "border-slate-300 bg-slate-100 shadow-sm"
-                  : "border-transparent hover:border-slate-200 hover:bg-slate-50"
+                ? "border-slate-300 bg-slate-100 shadow-sm"
+                : "border-transparent hover:border-slate-200 hover:bg-slate-50"
                 }`}
             >
               {/* Note Summary Info */}

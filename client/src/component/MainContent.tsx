@@ -206,17 +206,32 @@ export default function MainContent({
     const updatedNote = {
       ...noteToToggle,
       isArchived: !noteToToggle.isArchived,
+      // Unpin note when archiving
       isPinned: !noteToToggle.isArchived ? false : noteToToggle.isPinned,
     };
 
+    // 1. Optimistic UI update (Safe String ID comparison)
     setNotes((prevNotes) =>
-      prevNotes.map((note) => (note.id === updatedNote.id ? updatedNote : note))
+      prevNotes.map((note) =>
+        String(note.id) === String(updatedNote.id) ? updatedNote : note
+      )
     );
 
     try {
-      await noteService.update(updatedNote);
+      // 2. Call backend API
+      const response = await noteService.update(updatedNote);
+
+      // 3. Optional: Sync state with exact backend response if returned
+      if (response) {
+        setNotes((prevNotes) =>
+          prevNotes.map((note) =>
+            String(note.id) === String(updatedNote.id) ? response : note
+          )
+        );
+      }
     } catch (error) {
       console.error("Failed to update archive status:", error);
+      // Revert state on error by reloading from server
       loadNotes();
     }
   };

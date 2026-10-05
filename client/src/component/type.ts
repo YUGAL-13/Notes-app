@@ -2,34 +2,34 @@ import { Inbox, Pin, Trash, Archive } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface sidebar {
-    id: number;
-    icon: LucideIcon;
-    label: string;
-    count: number;
+  id: number;
+  icon: LucideIcon;
+  label: string;
+  count: number;
 }
 export const menuItems: sidebar[] = [
-    { id: 1, icon: Inbox, label: "All Notes", count: 0 },
-    { id: 2, icon: Pin, label: "Pinned", count: 0 },
-    { id: 3, icon: Archive, label: "Archive", count: 0 },
-    { id: 4, icon: Trash, label: "Trash", count: 0 },
+  { id: 1, icon: Inbox, label: "All Notes", count: 0 },
+  { id: 2, icon: Pin, label: "Pinned", count: 0 },
+  { id: 3, icon: Archive, label: "Archive", count: 0 },
+  { id: 4, icon: Trash, label: "Trash", count: 0 },
 ];
 
-interface tags{
-    title:string;
-    count:number;
-    id:number;
-    dotColor: string;
+interface tags {
+  title: string;
+  count: number;
+  id: number;
+  dotColor: string;
 }
-export const Taggers : tags[]=[
-    { id :1, title:"Personal",count:4 ,dotColor:"bg-blue-500"},
-    { id :2, title:"Work",count:3,dotColor:"bg-green-500"},
-    { id :3, title:"Learning",count:3,dotColor:"bg-violet-500"},
-    { id :4, title:"Ideas",count:2,dotColor:"bg-red-500"},
+export const Taggers: tags[] = [
+  { id: 1, title: "Personal", count: 4, dotColor: "bg-blue-500" },
+  { id: 2, title: "Work", count: 3, dotColor: "bg-green-500" },
+  { id: 3, title: "Learning", count: 3, dotColor: "bg-violet-500" },
+  { id: 4, title: "Ideas", count: 2, dotColor: "bg-red-500" },
 ]
 
 
 export interface NoteItem {
-  id?: string | number;
+  id?: string | number | undefined;
   title: string;
   date: string;
   label: string;
@@ -40,7 +40,7 @@ export interface NoteItem {
   content?: string;
   tags?: string[];
   isPinned?: boolean;
-  isArchived?:boolean;
+  isArchived?: boolean;
   isTrash?: boolean;
   deletedAt?: Date | null;
 }

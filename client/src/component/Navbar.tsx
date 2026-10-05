@@ -36,13 +36,13 @@ export default function Navbar({
             className="w-full bg-transparent outline-none border-none text-sm text-slate-800 placeholder:text-slate-400 font-medium"
           />
           {searchQuery && (
-          <button
-            onClick={() => onSearchChange?.("")}
-            className="  text-slate-400 hover:text-black cursor-pointer"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
+            <button
+              onClick={() => onSearchChange?.("")}
+              className="  text-slate-400 hover:text-black cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          )}
         </div>
 
         {/* New Note Button */}

@@ -216,11 +216,10 @@ export default function EditNote({
                     type="button"
                     disabled={isSelected}
                     onClick={() => handleAddTag(preset)}
-                    className={`text-xs px-2.5 py-1 rounded-lg border transition-all ${
-                      isSelected
+                    className={`text-xs px-2.5 py-1 rounded-lg border transition-all ${isSelected
                         ? "bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-60"
                         : "bg-white text-slate-600 border-slate-200 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50/50 cursor-pointer"
-                    }`}
+                      }`}
                   >
                     + {preset}
                   </button>
